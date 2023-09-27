@@ -1,0 +1,44 @@
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <label for="postId">Enter Post ID:</label>
+    <input type="number" id="postId" name="postId" [(ngModel)]="postId">
+    <button type="submit">Get Post Details</button>
+  </form>
+</div>
+
+<div *ngIf="post">
+  <h2>Post</h2>
+  <p><strong>Content:</strong> {{ post.content }}</p>
+  <p><strong>Author:</strong> {{ post.author.name }}</p>
+  <p><strong>Created at:</strong> {{ post.postDate | date }}</p>
+  
+  <h2>Comments</h2>
+<ul>
+  <li *ngFor="let comment of comments">
+    <ng-container *ngIf="comment">
+      <p><strong>Author:</strong> {{ comment.post.author.name }}</p>
+      <p><strong>Content:</strong> {{ comment.content }}</p>
+    </ng-container>
+  </li>
+</ul>
+
+  
+<div>
+  <h2>Add a Comment</h2>
+  <textarea [(ngModel)]="newCommentContent" placeholder="Enter your comment"> </textarea>
+  <div>
+    <label for="userDropdown">Select User:</label>
+    <select id="userDropdown" [(ngModel)]="selectedUser">
+      <option value="Sidharth">Sidharth</option>
+      <option value="SSS">SSS</option>
+      <option value="AAA">AAA</option>
+    </select>
+    <button (click)="insertSelectedUser()">Insert User</button>
+  </div>
+  <button (click)="addComment()">Submit Comment</button>
+</div>
+
+
+<div *ngIf="!post">
+  <p>Post not found.</p>
+</div>
