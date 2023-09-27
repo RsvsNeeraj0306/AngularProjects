@@ -1,0 +1,94 @@
+
+<h2>All Sections and Products</h2>
+
+<!-- Iterate through all sections -->
+<div *ngFor="let section of sections">
+  <h3>{{ section.sectionId }}.{{section.sectionName}}</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ProductId</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate through products within the section -->
+      <tr *ngFor="let product of section.products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>${{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>
+         
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Input field for product ID -->
+<input type="number" [(ngModel)]="selectedProductId" placeholder="Enter Product ID" />
+<button (click)="openSection(selectedProductId)">Open Section</button>
+
+<!-- Display sections and products if a valid product ID is entered -->
+<div *ngIf="isSectionOpen">
+  <h3>{{ openedSection.sectionId }}.{{ openedSection.sectionName}}</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ProductId</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate through filtered products within the section -->
+      <tr *ngFor="let product of  openedSection.products">
+        <td>{{product.id}}</td>
+        <td>{{ product.name }}</td>
+        <td>${{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>
+          <button (click)="selectProductAction(product)">Select Product</button>
+        </td>
+        <td>
+          <button (click)=" removeSelectedProduct(product.id)">Remove Product</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Selected Products</h2>
+
+<div >
+  <h3>Selected Products</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ProductId</th>
+        <th>Product Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate through selected products and display them -->
+      <tr *ngFor="let selectedProduct of selectedProducts">
+        <td>{{selectedProduct.id}}</td>
+        <td>{{selectedProduct.name}}</td>
+        <td>${{selectedProduct.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button (click)="checkout()">Checkout</button>
+
+
+

@@ -1,0 +1,9 @@
+<!-- vending-machine.component.html -->
+
+<h1>Vending Machine</h1>
+<input type="number" [(ngModel)]="selectedProductId" placeholder="Enter Product ID" />
+<button (click)="selectProduct()">Select Product</button>
+<button (click)="purchaseProduct()">Purchase</button>
+
+<app-display></app-display>
+
