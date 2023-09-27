@@ -1,0 +1,29 @@
+<!-- Data display section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cycle Shop</title>
+</head>
+<body>
+<table *ngIf="BorrowedData">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cycle Name</th>
+      <th>Stock</th>
+      <th>Action</th> <!-- Add a new column for the action button -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of BorrowedData">
+      <td>{{item.borrowedCycleId}}</td>
+        <td>{{ item.cycleName }}</td>
+        <td>{{ item.stock }}</td>
+        <td><button (click)="removeFromTheResponse(item.borrowedCycleId)">Return Cycle</button></td> <!-- Add a button to return the cycle -->
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
