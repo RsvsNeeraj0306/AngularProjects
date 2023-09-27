@@ -1,0 +1,51 @@
+/* odometer.component.css */
+
+.container {
+    max-width: 750px;
+    padding: 50px;
+  
+    border-radius: 5px;
+    
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if the container is narrow */
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

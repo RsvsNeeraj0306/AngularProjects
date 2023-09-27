@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Odometer</h2>
+    
+    
+    <div class="form-group">
+      <label for="odometerLength">Odometer Length:</label>
+      <input type="number" class="form-control" id="odometerLength" [(ngModel)]="odometerLength">
+    </div>
+    
+    
+    <div class="form-group">
+      <button (click)="setOdometerLength()">Enter</button>
+      <button (click)="getNextReading()">Next Reading</button>
+      <button (click)="getPreviousReading()">Previous Reading</button>
+      <button (click)="resetOdometerLength()">Reset</button>
+    </div>
+    
+
+    <div class="form-group">
+      <p>Current Odometer Reading: {{ currentReading }}</p>
+    </div>
+  </div>
+  
