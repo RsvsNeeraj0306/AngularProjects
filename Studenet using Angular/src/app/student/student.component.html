@@ -1,0 +1,23 @@
+<table>
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Course</th>
+        <th>Fees</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.Sid }}</td>
+        <td>{{ student.Sname }}</td>
+        <td>{{ student.dob | date:'longDate' }}</td>
+        <td>{{ student.course }}</td>
+        <td>{{ student.fees | currency:'INR' }}</td>
+        <td>{{ student.dob | age }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

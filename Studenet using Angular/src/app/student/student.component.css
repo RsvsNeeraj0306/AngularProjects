@@ -1,0 +1,66 @@
+/* student.component.css */
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  thead {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  thead th {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tbody tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Cell-specific Styles */
+  th:first-child,
+  td:first-child {
+    width: 10%;
+  }
+  
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 20%;
+  }
+  
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 15%;
+  }
+  
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 20%;
+  }
+  
+  th:nth-child(5),
+  td:nth-child(5) {
+    width: 15%;
+  }
+  
+  th:nth-child(6),
+  td:nth-child(6) {
+    width: 10%;
+  }
+  

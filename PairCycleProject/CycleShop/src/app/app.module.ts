@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AuthModule } from '@auth0/auth0-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdministratorComponent } from './administrator/administrator.component';
 import { ReturnComponent } from './return/return.component';
+import { AuthButtonComponent } from './auth-button/auth-button.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +26,23 @@ import { ReturnComponent } from './return/return.component';
     RegisterpageComponent,
     LogoutComponent,
     AdministratorComponent,
-    ReturnComponent
+    ReturnComponent,
+    AuthButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AuthModule.forRoot({
+      domain: 'dev-em6b2las3eok61xd.us.auth0.com',
+      clientId: 'zgrxAui7UxMVRxCu0yHgri6geDwOqIrl',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -7,6 +7,7 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { AdministratorComponent } from './administrator/administrator.component';
 import { ReturnComponent } from './return/return.component';
+import { AuthButtonComponent } from './auth-button/auth-button.component';
 
 const routes: Routes = [
   {path : 'cart' , component:CartComponent},
@@ -14,7 +15,10 @@ const routes: Routes = [
   {path : 'login', component:LoginFormComponent},
   {path: 'logout', component:LogoutComponent},
   {path:  'admin',component:AdministratorComponent},
-  {path: 'borrowed',component:ReturnComponent}
+  {path: 'borrowed',component:ReturnComponent},
+  {path : 'ologin', component:AuthButtonComponent}
+
+
 ];
 
 @NgModule({
