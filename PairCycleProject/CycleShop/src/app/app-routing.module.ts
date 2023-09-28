@@ -15,8 +15,7 @@ const routes: Routes = [
   {path : 'login', component:LoginFormComponent},
   {path: 'logout', component:LogoutComponent},
   {path:  'admin',component:AdministratorComponent},
-  {path: 'borrowed',component:ReturnComponent},
-  {path : 'ologin', component:AuthButtonComponent}
+  {path: 'borrowed',component:ReturnComponent}
 
 
 ];

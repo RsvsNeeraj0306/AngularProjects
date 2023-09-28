@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AdministratorComponent } from './administrator/administrator.component';
 import { ReturnComponent } from './return/return.component';
 import { AuthButtonComponent } from './auth-button/auth-button.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthButtonComponent } from './auth-button/auth-button.component';
     LogoutComponent,
     AdministratorComponent,
     ReturnComponent,
-    AuthButtonComponent
+    AuthButtonComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { AuthButtonComponent } from './auth-button/auth-button.component';
       domain: 'dev-em6b2las3eok61xd.us.auth0.com',
       clientId: 'zgrxAui7UxMVRxCu0yHgri6geDwOqIrl',
       authorizationParams: {
-        redirect_uri: window.location.origin
+        redirect_uri: window.location.origin+'/home'
       }
     }),
   ],
